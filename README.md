@@ -1,211 +1,140 @@
-## EX 1: Dictionary Operations in Python: Merging Two Dictionaries
+# Conditional Statements in Python: Even or Odd Checker
 
 ## 🎯 Aim
-To write a Python program that merges **two dictionaries** and combines their key-value pairs.
+To write a Python program to check whether the given number is **even** or **odd** using `if...else` statements.
 
 ## 🧠 Algorithm
-1. Define two dictionaries `dict1` and `dict2` with some key-value pairs.
-2. Define a function `merge()` that merges the two dictionaries using the `**` unpacking operator.
-   - The merged result will combine keys from both dictionaries. If a key exists in both, the value from `dict2` will overwrite that from `dict1`.
-3. Call the `merge()` function and print the merged dictionary.
+1. Get an input from the user.
+2. Convert the input to an integer and store it in a variable `a`.
+3. Use the modulo operator `%` to check if `a % 2 == 0`.
+   - If true, print `"EVEN"`.
+   - Else, print `"ODD"`.
+4. End the program.
 
 ## 🧾 Program
-```python3
-dict1 = eval(input())
-dict2 = eval(input())
-dict2.update(dict1)
-print(dict2)
 ```
-
-## Output
-<img width="1193" height="858" alt="image" src="https://github.com/user-attachments/assets/46799e5e-2409-4bcb-8d46-7bc2e5a05935" />
-
-## Result
-Thus the python program that merges **two dictionaries** and combines their key-value pairs is completed successfully.
-<br>
-<br>
-# EX 2: Dictionary-Python Program to Sort a Dictionary by Keys and Values
-
-This Python program demonstrates how to sort a dictionary:
-- Alphabetically by keys
-- Alphabetically by values
-
----
-
-## 🎯 Aim
-
-To write a Python program that sorts a dictionary's:
-- Keys in alphabetical order
-- Values in alphabetical order
-
----
-
-## 🧠 Algorithm
-
-1. **Start the program.**
-2. **Define** a dictionary with key-value pairs.
-3. **Sort by Keys**:
-   - Use `sorted(dictionary.items())`
-   - Convert the result to a dictionary using `dict()`
-4. **Sort by Values**:
-   - Use `sorted(dictionary.items(), key=lambda item: item[1])`
-   - Convert the result to a dictionary using `dict()`
-5. **Display** the original and sorted dictionaries.
-6. **End the program.**
-
----
-
-## 🧪Program
-```python3
-key_value = eval(input())
-
-kv = sorted(key_value.items())
-
-print("Keys and Values sorted in alphabetical order by the key")
-
-for i in kv:
-    print(i, end=" ")
-```
-
-## Sample Output
-<img width="1184" height="748" alt="image" src="https://github.com/user-attachments/assets/646e3ec9-9c82-4cd5-a3d3-cd8d6f8f6c43" />
-
-## Result
-
-Thus the python program to sort a dictionary and print is completed successfully.
-
-
-
-<br>
-<br>
-
-# EX 3: Exception Handling in Python: Avoiding Index Errors
-
-## 🎯 Aim
-To write a Python program that handles an **IndexError** when trying to access an element beyond the available range of a list.
-
-## 🧠 Algorithm
-1. Define a list `list1` with some integer elements.
-2. Use a **try-except** block:
-   - In the `try` block, attempt to access an index that is out of range (e.g., `list1[5]`).
-   - In the `except` block, catch the error and print a custom message `"You're out of list range"`.
-3. Print the result based on whether the index access succeeds or fails.
-
-## 🧾 Program
-```python3
-try:
-    n=int(input())
-    l=[]
-    for i in range(n):
-        l.append(int(input()))
-    print(l)
-    print(l[6])
-except IndexError:
-    print("6 is not accepted")
-```
-
-## Output
-<img width="1543" height="854" alt="image" src="https://github.com/user-attachments/assets/87e77317-f328-4ba8-92d3-cc06eec4809d" />
-
-## Result
-Thus the python program that handles an **IndexError** when trying to access an element beyond the available range of a list is completed successfully.
-
-
-
-
-
-
-<br>
-<br>
----
-
-# EX 4: Python Script to Reverse File Contents and Save to Another File
-
-## 🎯 Aim
-To write a Python program that reverses the contents of a file and saves the reversed content into another file.
-
-## 🧠 Algorithm
-1. Create a function `create_file(file_path, content)` to write the given content into a file.  
-2. Create a function `reverse_file_content(input_file_path, output_file_path)` to:  
-   - Read the content of the input file.  
-   - Reverse the content using slicing (`[::-1]`).  
-   - Write the reversed content into the output file.  
-3. Create a function `read_file(output_file_path)` to read and return the content of the output file.  
-4. Get input content from the user, create the input file, reverse its content, and display the reversed result.  
-
-## 🧾 Program
-```python
-def create_file(file_path, content):
-    with open(file_path, 'w') as file:
-        file.write(content)
-
-def reverse_file_content(input_file_path, output_file_path):
-    with open(input_file_path, 'r') as file:
-        content = file.read()
-    revcont = content[::-1]
-    with open(output_file_path, 'w') as file:
-        file.write(revcont)
-
-def read_file(output_file_path):
-    with open(output_file_path, 'r') as file:
-        content = file.read()
-        return content
-
-# Example usage
-input_file_path = 'test_case_1.txt'
-output_file_path = 'reversed_1.txt'
-file_content = input("Enter file content: ")
-create_file(input_file_path, file_content)
-reverse_file_content(input_file_path, output_file_path)
-print(read_file(output_file_path))
-```
-
-## 🖥️ Example Output
-<img width="1545" height="827" alt="image" src="https://github.com/user-attachments/assets/57c5d7e3-37f4-4165-aace-b13445bb264b" />
-
-
-
-## ✅ Result
-Thus, the program has been successfully executed to reverse the contents of a file and save it to another file.
-
----
-
-
-
-
-
-
-<br>
-<br>
-
-# EX 5: Classes and Objects in Python: Calculate the Area of a Circle
-
-## 🎯 Aim
-To write a Python program that calculates the **area of a circle** based on the radius provided by the user. This program uses a class named `Circle` and a method `area` to perform the calculation.
-
-## 🧠 Algorithm
-1. **Get user input**: Take the radius of the circle as input from the user.
-2. **Define the class**: Create a class named `cse`.
-3. **Define the method**: Inside the class, define the method `mech` to calculate the area of the circle using the formula:  
-   Area = pi *r^2 
-4. **Execute the program**: Create an object of the class and call the method with the radius value.
-
-## 🧾 Program
-
-```python3
-import math
-class Circle:
-    def __init__(self,radius):
-        self.radius=radius
-    def area(self):
-        return math.pi *self.radius*self.radius
-r=float(input())        
-C=Circle(r)        
-print("Area of circle: {:.2f}".format(C.area()))
-    
+num = int(input("Enter a number: "))
+if (num % 2) == 0:
+    print("{} is Even".format(num))
+else:
+    print("{} is Odd".format(num))
 ```
 ## Output
-<img width="1362" height="804" alt="image" src="https://github.com/user-attachments/assets/c78e47ae-9611-4319-9062-aaa5ec856a06" />
+
+<img width="397" height="184" alt="image" src="https://github.com/user-attachments/assets/f3c95d51-0e1e-409c-b5ea-389d8cfd4941" />
 
 ## Result
-Thus the python  program that calculates the **area of a circle** based on the radius provided by the user. This program uses a class named `Circle` and a method `area` to perform the calculation is completed successfully.
+Thus, the program has been excecuted successfully.
+
+
+
+# Ex 1:Datatypes-Boolean Expression Evaluation in Python
+
+## 🎯 Aim
+To write a Python program that evaluates and prints the results of boolean and arithmetic expressions involving `True` and `False`.
+
+## 🧠 Algorithm
+1. Set variable `a` to the result of the expression `0 == True`.
+2. Set variable `b` to the result of the expression `False == False`.
+3. Set variable `c` to the result of the expression `True + True`.
+4. Set variable `d` to the result of the expression `False + 9`.
+5. Print the value of `a` with the label "a is".
+6. Print the value of `b` with the label "b is".
+7. Print the value of `c` with the label "c:".
+8. Print the value of `d` with the label "d:".
+
+## 💻 Program
+```
+a = (0 == True)
+b = (False == False)
+c = (True + True)
+d = (False + 9)
+
+print("a is", a)
+print("b is", b)
+print("c:", c)
+print("d:", d)
+```
+## Output
+
+<img width="367" height="252" alt="image" src="https://github.com/user-attachments/assets/3b8f1b81-1fab-49b7-83af-2838a5122250" />
+
+## Result
+Thus, the program has been excecuted successfully.
+
+
+# Ex-2 Datatypes-Character Literal in Python
+
+## 🎯 Aim
+To write a Python program that prints the characters `'T'` and `'a'` using character literals.
+
+## 🧠 Algorithm
+1. Print the character `'T'`.
+2. Print the character `'a'`.
+
+## 🧾 Program
+```
+print('T')
+print('a')
+```
+## Output
+
+<img width="355" height="174" alt="image" src="https://github.com/user-attachments/assets/e61a592b-5f46-44c1-9c98-2034105b8044" />
+
+## Result
+Thus, the program has been excecuted successfully.
+
+
+# Ex-3 Datatypes-Complex Number Creation in Python
+
+## 🎯 Aim
+To write a Python program that reads two integers, creates a complex number using them, and then prints the complex number along with its real and imaginary parts.
+
+## 🧠 Algorithm
+1. Read an integer input from the user and assign it to the variable `a` (real part).
+2. Read another integer input from the user and assign it to the variable `b` (imaginary part).
+3. Create a complex number `x` using the `complex(a, b)` function.
+4. Print the complex number `x`.
+5. Print the real part of `x` using `x.real`.
+6. Print the imaginary part of `x` using `x.imag`.
+
+## 💻 Program
+```
+a = int(input("Enter the real part: "))
+b = int(input("Enter the imaginary part: "))
+
+x = complex(a, b)
+
+print("Complex number:", x)
+print("Real part:", x.real)
+print("Imaginary part:", x.imag)
+```
+## Output
+
+<img width="432" height="308" alt="image" src="https://github.com/user-attachments/assets/9c9139b8-81ad-4d1a-bff7-af2fe6a38966" />
+
+## Result
+Thus, the program has been excecuted successfully.
+
+
+# Ex-4 Datatypes-Read and Print a String in Python
+
+## 🎯 Aim
+To write a Python program to read a string from the user and then print it.
+
+## 🧠 Algorithm
+1. Assign a variable named `men_stepped_on_the_moon`.
+2. Use `input()` to read a string from the user and store it in the variable.
+3. Print the value stored in the variable.
+
+## 🧾 Program
+```
+men_stepped_on_the_moon = input("Enter a string: ")
+print(men_stepped_on_the_moon)
+```
+## Output
+
+<img width="371" height="184" alt="image" src="https://github.com/user-attachments/assets/3b49764e-a13c-438e-bdf0-803e5b8e52ef" />
+
+## Result
+Thus, the program has been excecuted successfully.
